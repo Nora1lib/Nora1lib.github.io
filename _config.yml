@@ -26,7 +26,7 @@ author:
   avatar           : "profile.png"
   name             : "Nora"
   pronouns         : # example: "she/her"  
-  bio              : "2004年生人，未婚未育养有一猫"
+  bio              : "南京大学新闻传播学院数字营销专业研究生在读，主要研究方向为平台传播、科普传播等。"
   location         : "江苏南京"
   employer         : "Nanjing University"
   uri              : # URL
@@ -38,10 +38,10 @@ author:
   googlescholar    : ""
   inspire-hep      : # URL
   impactstory      : # URL
-  orcid            : "https://orcid.org/yourorcidurl"
+  orcid            : # URL
   semantic         : # URL
   ssrn             : # URL
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  pubmed           : # URL
   researchgate     : # URL
   scopus           : # URL
   zotero           : # URL
@@ -51,13 +51,13 @@ author:
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : "academicpages"
+  github           : "Nora1lib"
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
   # Social media
   artstation       : # Username
-  bluesky          : "bsky.app" # Replace this with you Bluesky username
+  bluesky          : "Nora1lib" # Replace this with you Bluesky username
   facebook         : # Username
   flickr           : # Username
   foursquare       : # Username
