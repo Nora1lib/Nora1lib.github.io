@@ -37,7 +37,7 @@
         <li><a href="mailto:{{ author.email }}"><i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"></i>{{ site.data.ui-text[site.locale].email_label | default: "Email" }}</a></li>
       {% endif %}
       {% if author.wechat %}
-        <li class="author__desktop"><i class="fab fa-fw fa-weixin icon-pad-right" aria-hidden="true"></i>微信：{{ author.wechat }}</li>
+        <li><a href="{{ author.wechat | relative_url }}" class="wechat-link" target="_blank" rel="noopener"><i class="fab fa-fw fa-weixin icon-pad-right" aria-hidden="true"></i>WeChat</a></li>
       {% endif %}      
       <!-- Font Awesome and Academicons icons / Academic websites -->
       {% if author.academia %}
@@ -175,4 +175,73 @@
       {% endif %}      
     </ul>
   </div>
+  {% if author.wechat %}
+<dialog id="wechat-dialog" class="wechat-dialog">
+  <button type="button" class="wechat-dialog__close" aria-label="关闭">×</button>
+  <img src="{{ author.wechat | relative_url }}" alt="微信二维码">
+  <p class="wechat-dialog__tip">扫码添加我的微信</p>
+</dialog>
+
+<style>
+  .wechat-dialog {
+    border: 0;
+    border-radius: 14px;
+    padding: 26px 26px 18px;
+    background: #fff;              /* 强制白底，否则深色模式下二维码扫不出来 */
+    color: #333;
+    text-align: center;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, .3);
+    max-width: min(88vw, 330px);
+  }
+  .wechat-dialog::backdrop { background: rgba(0, 0, 0, .55); }
+  .wechat-dialog img {
+    display: block;
+    width: 260px;
+    max-width: 70vw;
+    height: auto;
+    margin: 0 auto;
+  }
+  .wechat-dialog .wechat-dialog__tip {
+    margin: 14px 0 0;
+    font-size: 13px;
+    color: #777;
+  }
+  .wechat-dialog .wechat-dialog__close {
+    position: absolute;
+    top: 4px;
+    right: 8px;
+    padding: 4px;
+    border: 0;
+    background: none;
+    font-size: 22px;
+    line-height: 1;
+    color: #999;
+    cursor: pointer;
+  }
+  .wechat-dialog .wechat-dialog__close:hover { color: #333; }
+</style>
+
+<script>
+  (function () {
+    var dlg = document.getElementById('wechat-dialog');
+    if (!dlg) return;
+    var link = document.querySelector('a.wechat-link');
+
+    // 支持 <dialog> 的浏览器：点链接弹层展示二维码
+    if (link && typeof dlg.showModal === 'function') {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        dlg.showModal();
+      });
+      // 点遮罩空白处关闭
+      dlg.addEventListener('click', function (e) {
+        if (e.target === dlg) dlg.close();
+      });
+      dlg.querySelector('.wechat-dialog__close')
+         .addEventListener('click', function () { dlg.close(); });
+    }
+    // 不支持 <dialog> 的老浏览器：不拦截点击，直接按 href 打开二维码图片
+  })();
+</script>
+{% endif %}
 </div>
