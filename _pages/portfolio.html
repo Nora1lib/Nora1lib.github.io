@@ -1,3 +1,4 @@
+
 ---
 layout: single
 title: "作品集 Portfolio"
@@ -8,11 +9,10 @@ classes: wide
 
 <div class="pf">
 
-<p class="pf-lead">
-数字营销 · 学术研究 · 视觉作品　｜　完整作品集共 18 页，分为个人简介、科研经历、学科竞赛三部分。
-<br>
-<a class="pf-dl" href="/files/portfolio.pdf">↓ 下载 PDF 完整版（7 MB）</a>
-</p>
+<div class="pf-head">
+  <p class="pf-sub">数字营销 · 学术研究 · 视觉作品</p>
+  <p class="pf-actions"><a class="pf-dl" href="/files/portfolio.pdf">↓ 下载 PDF 完整版</a></p>
+</div>
 
 <nav class="pf-toc">
   <a href="#sec1">01 个人简介</a>
@@ -120,31 +120,45 @@ classes: wide
 
 <style>
   .pf { max-width: 100%; }
-  .pf-lead { font-size: .92em; line-height: 1.7; color: #666; margin-bottom: 1.2em; }
-  .pf-dl { display: inline-block; margin-top: .5em; padding: .35em .9em;
-           border: 1px solid currentColor; border-radius: 999px; font-size: .95em;
-           text-decoration: none; }
-  .pf-dl:hover { opacity: .7; }
-  .pf-toc { display: flex; flex-wrap: wrap; gap: .6em; justify-content: center;
-            margin: 0 0 2.4em; padding: .8em 0; font-size: .9em;
-            border-top: 1px solid rgba(0,0,0,.08); border-bottom: 1px solid rgba(0,0,0,.08); }
-  .pf-toc a { text-decoration: none; }
+
+  /* 头部：副标题 + 下载按钮 */
+  .pf-head { margin: 0 0 1.5em; }
+  .pf-sub { margin: 0; font-size: 1em; font-weight: 500;
+            letter-spacing: .02em; line-height: 1.6; color: #4a4a4a; }
+  .pf-actions { margin: 1.1em 0 0; line-height: 1; }
+
+  /* 下载按钮：全页最小字号、最轻字重、最小体积 */
+  .pf-dl { display: inline-block; padding: .28em .85em;
+           font-size: .66em; font-weight: 400; letter-spacing: .06em;
+           line-height: 1.35; color: #6969BC; text-decoration: none;
+           border: 1px solid #6969BC; border-radius: 999px;
+           transition: background-color .15s ease; }
+  .pf-dl:hover { background: rgba(105, 105, 188, .1); }
+
+  /* 横向目录 */
+  .pf-toc { display: flex; flex-wrap: wrap; gap: .9em; justify-content: center;
+            margin: 0 0 2.4em; padding: .8em 0;
+            border-top: 1px solid rgba(0,0,0,.08);
+            border-bottom: 1px solid rgba(0,0,0,.08); }
+  .pf-toc a { color: #1F3E66; font-size: .76em; font-weight: 500;
+              letter-spacing: .03em; text-decoration: none; }
   .pf-toc a:hover { text-decoration: underline; }
+
+  /* 章节标题 */
   .pf-h { margin: 2.6em 0 1em; padding-bottom: .35em; font-size: 1.1em;
           letter-spacing: .03em; border-bottom: 2px solid rgba(0,0,0,.08); }
   .pf-h-num { display: inline-block; min-width: 2.1em; margin-right: .5em;
               font-size: .85em; color: #999; }
+
+  /* 图片 */
   .pf-fig { margin: 0 0 1.5em; }
   .pf-fig a { display: block; cursor: zoom-in; }
   .pf-fig img { display: block; width: 100%; height: auto;
                 border-radius: 10px; box-shadow: 0 2px 18px rgba(0,0,0,.08);
                 transition: opacity .15s ease; }
   .pf-fig a:hover img { opacity: .93; }
-  @media (max-width: 600px) {
-    .pf-fig { margin-bottom: 1em; }
-    .pf-fig img { border-radius: 6px; }
-  }
 
+  /* 灯箱 */
   .pf-lightbox { margin: auto; padding: 0; border: 0; background: transparent;
                  max-width: none; max-height: none; overflow: visible; }
   .pf-lightbox::backdrop { background: rgba(0, 0, 0, .88); }
@@ -157,6 +171,17 @@ classes: wide
                         background: rgba(255,255,255,.14); color: #fff;
                         font-size: 26px; line-height: 1; cursor: pointer; }
   .pf-lightbox__close:hover { background: rgba(255,255,255,.3); }
+
+  /* 深色模式适配 */
+  html[data-theme="dark"] .pf-sub { color: #c9c9c9; }
+  html[data-theme="dark"] .pf-dl { color: #A6A6E3; border-color: #A6A6E3; }
+  html[data-theme="dark"] .pf-dl:hover { background: rgba(166, 166, 227, .15); }
+  html[data-theme="dark"] .pf-toc a { color: #8FB3E0; }
+
+  @media (max-width: 600px) {
+    .pf-fig { margin-bottom: 1em; }
+    .pf-fig img { border-radius: 6px; }
+  }
 </style>
 
 <script>
