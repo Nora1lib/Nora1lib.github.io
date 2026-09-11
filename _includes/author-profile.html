@@ -223,8 +223,7 @@
     var card = document.getElementById('wechat-hovercard');
     if (!link || !card) return;
 
-    // 关键一步：把卡片挪到 <body> 下。
-    // 侧边栏有 overflow-y:auto 和 transform，留在里面会被裁掉。
+    /* 把卡片挪到 body 标签下：侧边栏有 overflow-y:auto 和 transform，留在里面会被裁掉 */
     document.body.appendChild(card);
 
     var hideTimer = null;
@@ -235,16 +234,11 @@
       var w = card.offsetWidth;
       var h = card.offsetHeight;
       var gap = 12;
-
-      // 默认贴在链接右侧；右边放不下就翻到左侧
       var left = r.right + gap;
       if (left + w > window.innerWidth - 8) left = r.left - w - gap;
       if (left < 8) left = 8;
-
-      // 与链接垂直居中对齐，并限制在视口内
       var top = r.top + r.height / 2 - h / 2;
       top = Math.max(8, Math.min(top, window.innerHeight - h - 8));
-
       card.style.left = Math.round(left) + 'px';
       card.style.top = Math.round(top) + 'px';
     }
@@ -263,7 +257,7 @@
 
     function scheduleHide() {
       clearTimeout(hideTimer);
-      hideTimer = setTimeout(hide, 140);   // 留 0.14 秒，鼠标能顺利移到卡片上
+      hideTimer = setTimeout(hide, 140);
     }
 
     if (canHover) {
@@ -275,7 +269,6 @@
       link.addEventListener('blur', scheduleHide);
     }
 
-    // 触屏设备没有 hover：点一下展开／再点一下收起
     link.addEventListener('click', function (e) {
       e.preventDefault();
       if (!canHover) {
@@ -283,7 +276,6 @@
       }
     });
 
-    // 滚动或改窗口大小时先收起，避免卡片停在错误位置
     window.addEventListener('scroll', hide, true);
     window.addEventListener('resize', hide);
   })();
