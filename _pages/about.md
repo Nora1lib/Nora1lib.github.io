@@ -1,6 +1,7 @@
 ---
 permalink: /
 title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
+seo_title: "曹依诺 ｜ Nora ・-・💬"
 author_profile: true
 redirect_from: 
   - /about/
