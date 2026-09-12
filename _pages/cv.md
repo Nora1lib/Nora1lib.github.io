@@ -11,54 +11,55 @@ redirect_from:
 
 Education
 ======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+* **南京大学** 新闻传播学院，2026 – 至今
+  * 硕士研究生，专业：数字营销
+* **苏州大学** 传媒学院，2022 – 2026
+  * 广告学专业，获文学学士学位
+  * 综合绩点 3.9 / 4.0，专业排名 1 / 32
 
-Work experience
+Research experience
 ======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+* 2024.05 – 2026.05：国家级大学生创新创业训练项目 · **主持人**
+  * 《数字传播时代城市记忆建构与传播机制探索——以苏州相门城墙叙事延伸为例》
+  * 主导拍摄制作历史文化纪录片《古韵新声》，负责从选题策划、实地拍摄到后期制作的全流程工作
+  * 该作品获 2025 中国好创意暨全国数字艺术设计大赛三等奖
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* 2025.05 – 2027.05：省级大学生创新创业训练项目 · **核心成员**
+  * 《未来学视域下人工智能与青年婚恋期望的双向互动机制研究》
+  * 构建「个体特质 — 功能选择 — 婚恋意愿」动态模型
+  * 使用 SPSS、Gooseeker、ROSTCM6 等工具解构用户对多功能 AI 伴侣的选择偏好
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* 2025.05 – 2025.06：调研报告《苏州市短交通行业发展现状与前景研究》 · **主要作者**
+  * 获第十六届全国大学生市场调查与分析大赛国家级三等奖、江苏省一等奖
+  * 使用 Python、LDA 主题模型识别短交通出行痛点与用户关切话题，构建行业用户画像
+
+* 2023.08：短视频《「筚路蓝缕，以启山林」——张辰亮》
+  * 获「外研社·国才杯」国际传播力短视频大赛国家级三等奖，B 站播放量破 40 万
+  * 负责选题策划、脚本撰写、视频拍摄与剪辑，擅长运用镜头语言与节奏控制
 
 Publications
 ======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
+* 《拟人化社交机器人的社会存在感建构与人机关系协商——以评论罗伯特为例》 · 第一作者
+* 《基于说服双路径模型的国货品牌复兴传播逻辑探究——以蜂花为例》 · 第一作者
+
+Awards and honors
 ======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
+* 2025.08　第十六届全国大学生市场调查与分析大赛　国家级三等奖、江苏省一等奖
+* 2024.08　全国大学生广告艺术大赛江苏赛区　二等奖、三等奖、优秀奖
+* 2024.08　未来设计师·全国高校数字艺术设计大赛江苏赛区　二等奖、三等奖
+* 2023.08　「外研社·国才杯」国际传播力短视频大赛　国家级三等奖
+* 多次获得苏州大学学习优秀特等、一等奖学金；两次获得创新创业一等奖学金
+
+Skills
 ======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
+* **视频剪辑**：剪映、Adobe Premiere Pro
+* **平面设计**：Adobe Photoshop
+* **数据分析**：SPSS、Python（LDA 主题建模）
+* **网络文本采集**：Gooseeker、ROSTCM6
+* **语言**：CET-4 609 分 / CET-6 571 分
+
 Service and leadership
 ======
-* Currently signed in to 43 different slack teams
+* 2024.09 – 2025.06　**苏州大学传媒学院学生科技协会 · 理事长**
+  * 对接大学生广告艺术节学院奖组委会，引入周六福、华邦制药等品牌资源
+  * 组织「创意星球大讲堂」、第八届国际大学生新媒体节暨新媒体原创作品大赛等活动 10 余场，吸引超 1000 人次参赛
