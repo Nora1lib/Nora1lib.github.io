@@ -9,7 +9,7 @@ classes: wide
 <div class="cat">
 
   <div class="cat-card">
-    <div class="cat-card__avatar">🐈</div>
+    <div class="cat-card__photo"><img src="/images/cat/cat-avatar.webp" alt="红豆泥"></div>
     <div class="cat-card__info">
       <div class="cat-card__name">红豆泥</div>
       <div class="cat-card__sub">中华田园猫 · 橘猫</div>
@@ -30,41 +30,120 @@ classes: wide
     <div class="cat-row"><span class="cat-row__k">状态</span><span class="cat-row__v">已绝育</span></div>
   </div>
 
+  <h2 class="cat-h">相册</h2>
+
+  <div class="cat-gallery">
+    <a class="cat-zoom" href="/images/cat/cat-01.webp"><img src="/images/cat/cat-01.webp" alt="红豆泥的照片 1" loading="lazy"></a>
+    <a class="cat-zoom" href="/images/cat/cat-02.webp"><img src="/images/cat/cat-02.webp" alt="红豆泥的照片 2" loading="lazy"></a>
+    <a class="cat-zoom" href="/images/cat/cat-03.webp"><img src="/images/cat/cat-03.webp" alt="红豆泥的照片 3" loading="lazy"></a>
+    <a class="cat-zoom" href="/images/cat/cat-04.webp"><img src="/images/cat/cat-04.webp" alt="红豆泥的照片 4" loading="lazy"></a>
+    <a class="cat-zoom" href="/images/cat/cat-05.webp"><img src="/images/cat/cat-05.webp" alt="红豆泥的照片 5" loading="lazy"></a>
+    <a class="cat-zoom" href="/images/cat/cat-06.webp"><img src="/images/cat/cat-06.webp" alt="红豆泥的照片 6" loading="lazy"></a>
+    <a class="cat-zoom" href="/images/cat/cat-07.webp"><img src="/images/cat/cat-07.webp" alt="红豆泥的照片 7" loading="lazy"></a>
+    <a class="cat-zoom" href="/images/cat/cat-08.webp"><img src="/images/cat/cat-08.webp" alt="红豆泥的照片 8" loading="lazy"></a>
+    <a class="cat-zoom" href="/images/cat/cat-09.webp"><img src="/images/cat/cat-09.webp" alt="红豆泥的照片 9" loading="lazy"></a>
+  </div>
+
 </div>
 
 <style>
-  .cat-card { display: flex; align-items: center; gap: 1.2em;
+  .cat-card { display: flex; align-items: center; gap: 1.3em;
               padding: 1.4em 1.5em; margin: 0 0 1.5em;
               border: 1px solid rgba(0,0,0,.08); border-radius: 12px;
               box-shadow: 0 2px 18px rgba(0,0,0,.05); }
-  .cat-card__avatar { flex: 0 0 auto; width: 86px; height: 86px;
-                      display: flex; align-items: center; justify-content: center;
-                      font-size: 42px; line-height: 1;
-                      background: rgba(232, 154, 74, .14);
-                      border-radius: 50%; }
-  .cat-card__name { font-size: 1.35em; font-weight: 600; margin-bottom: .2em; }
-  .cat-card__sub { font-size: .9em; color: #8a8a8a; }
+  .cat-card__photo { flex: 0 0 auto; }
+  .cat-card__photo img { display: block; width: 112px; height: 112px;
+                         object-fit: cover; border-radius: 12px; }
+  .cat-card__name { font-size: 1.45em; font-weight: 600; margin-bottom: .25em; }
+  .cat-card__sub { font-size: .92em; color: #8a8a8a; }
 
   .cat-quote { margin: 0 0 2em; padding-left: .9em;
                border-left: 2px solid rgba(0,0,0,.14);
                color: #666; font-size: .95em; }
 
-  .cat-facts { margin: 0; }
+  .cat-facts { margin: 0 0 .5em; }
   .cat-row { display: flex; gap: 1.2em; padding: .55em 0;
              border-bottom: 1px dashed rgba(0,0,0,.08); }
   .cat-row:last-child { border-bottom: 0; }
   .cat-row__k { flex: 0 0 4.2em; color: #8a8a8a; font-size: .9em; }
   .cat-row__v { flex: 1 1 auto; font-weight: 500; }
 
+  .cat-h { margin: 2.2em 0 1em; padding-bottom: .35em; font-size: 1.05em;
+           border-bottom: 2px solid rgba(0,0,0,.08); }
+
+  /* 瀑布流：按图片原始比例排列，不裁剪 */
+  .cat-gallery { column-count: 3; column-gap: 10px; }
+  .cat-gallery a { display: block; margin: 0 0 10px; break-inside: avoid;
+                   cursor: zoom-in; }
+  .cat-gallery img { display: block; width: 100%; height: auto;
+                     border-radius: 8px; transition: opacity .15s ease; }
+  .cat-gallery a:hover img { opacity: .88; }
+
+  .cat-lightbox { margin: auto; padding: 0; border: 0; background: transparent;
+                  max-width: none; max-height: none; overflow: visible; }
+  .cat-lightbox::backdrop { background: rgba(0,0,0,.88); }
+  .cat-lightbox img { display: block; width: auto; height: auto;
+                      max-width: 92vw; max-height: 92vh; border-radius: 6px;
+                      box-shadow: 0 24px 70px rgba(0,0,0,.55); }
+  .cat-lightbox__close { position: fixed; top: 12px; right: 16px;
+                         width: 44px; height: 44px; padding: 0; border: 0;
+                         border-radius: 50%; background: rgba(255,255,255,.14);
+                         color: #fff; font-size: 26px; line-height: 1;
+                         cursor: pointer; }
+  .cat-lightbox__close:hover { background: rgba(255,255,255,.3); }
+
   html[data-theme="dark"] .cat-card { border-color: rgba(255,255,255,.14); }
-  html[data-theme="dark"] .cat-card__avatar { background: rgba(232,154,74,.18); }
   html[data-theme="dark"] .cat-card__sub { color: #9a9a9a; }
   html[data-theme="dark"] .cat-quote { color: #b8b8b8;
                                        border-left-color: rgba(255,255,255,.22); }
   html[data-theme="dark"] .cat-row { border-bottom-color: rgba(255,255,255,.12); }
   html[data-theme="dark"] .cat-row__k { color: #9a9a9a; }
 
+  @media (max-width: 900px) { .cat-gallery { column-count: 2; } }
   @media (max-width: 600px) {
     .cat-card { flex-direction: column; align-items: flex-start; }
+    .cat-gallery { column-gap: 6px; }
+    .cat-gallery a { margin-bottom: 6px; }
   }
 </style>
+
+<script>
+  (function () {
+    var links = document.querySelectorAll('a.cat-zoom');
+    if (!links.length || typeof HTMLDialogElement === 'undefined') return;
+
+    var dlg = document.createElement('dialog');
+    dlg.className = 'cat-lightbox';
+
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'cat-lightbox__close';
+    btn.setAttribute('aria-label', '关闭');
+    btn.textContent = '\u00d7';
+
+    var img = document.createElement('img');
+    img.alt = '';
+
+    dlg.appendChild(btn);
+    dlg.appendChild(img);
+    document.body.appendChild(dlg);
+
+    Array.prototype.forEach.call(links, function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        img.src = a.getAttribute('href');
+        document.documentElement.style.overflow = 'hidden';
+        dlg.showModal();
+      });
+    });
+
+    dlg.addEventListener('click', function (e) {
+      if (e.target === dlg) dlg.close();
+    });
+    btn.addEventListener('click', function () { dlg.close(); });
+    dlg.addEventListener('close', function () {
+      img.removeAttribute('src');
+      document.documentElement.style.overflow = '';
+    });
+  })();
+</script>
