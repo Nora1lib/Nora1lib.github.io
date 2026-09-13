@@ -1,131 +1,70 @@
 ---
 layout: single
-title: "小猫档案 The Cat"
+title: "The Cat"
 permalink: /cat/
 author_profile: true
 classes: wide
 ---
 
-<div class="cat-wrap">
+<div class="cat">
 
   <div class="cat-card">
-    <div class="cat-card__photo">
-      <img src="/images/cat/cat-01.webp" alt="猫的照片">
-    </div>
+    <div class="cat-card__avatar">🐈</div>
     <div class="cat-card__info">
-      <div class="cat-row"><span class="cat-row__k">名字</span><span class="cat-row__v">待填写</span></div>
-      <div class="cat-row"><span class="cat-row__k">品种</span><span class="cat-row__v">待填写</span></div>
-      <div class="cat-row"><span class="cat-row__k">生日</span><span class="cat-row__v">待填写</span></div>
-      <div class="cat-row"><span class="cat-row__k">体重</span><span class="cat-row__v">待填写</span></div>
-      <div class="cat-row"><span class="cat-row__k">性格</span><span class="cat-row__v">待填写</span></div>
-      <div class="cat-row"><span class="cat-row__k">职位</span><span class="cat-row__v">家里的实际掌权者</span></div>
+      <div class="cat-card__name">红豆泥</div>
+      <div class="cat-card__sub">中华田园猫 · 橘猫</div>
     </div>
   </div>
 
-  <p class="cat-quote">「待填写：一句关于它的话」</p>
+  <p class="cat-quote">「苏州大学校园里的小流浪，2026 年 3 月跟我回了南京。」</p>
 
-  <h2 class="cat-h">成长相册</h2>
-
-  <div class="cat-gallery">
-    <a class="cat-zoom" href="/images/cat/cat-01.webp"><img src="/images/cat/cat-01.webp" alt="" loading="lazy"></a>
-    <a class="cat-zoom" href="/images/cat/cat-02.webp"><img src="/images/cat/cat-02.webp" alt="" loading="lazy"></a>
-    <a class="cat-zoom" href="/images/cat/cat-03.webp"><img src="/images/cat/cat-03.webp" alt="" loading="lazy"></a>
+  <div class="cat-facts">
+    <div class="cat-row"><span class="cat-row__k">名字</span><span class="cat-row__v">红豆泥</span></div>
+    <div class="cat-row"><span class="cat-row__k">品种</span><span class="cat-row__v">中华田园猫 · 橘猫</span></div>
+    <div class="cat-row"><span class="cat-row__k">生日</span><span class="cat-row__v">2025.09</span></div>
+    <div class="cat-row"><span class="cat-row__k">性别</span><span class="cat-row__v">小女猫 · 单身主义</span></div>
+    <div class="cat-row"><span class="cat-row__k">性格</span><span class="cat-row__v">胆小 · 粘人</span></div>
+    <div class="cat-row"><span class="cat-row__k">户籍</span><span class="cat-row__v">江苏苏州</span></div>
+    <div class="cat-row"><span class="cat-row__k">现居</span><span class="cat-row__v">江苏南京</span></div>
+    <div class="cat-row"><span class="cat-row__k">领养</span><span class="cat-row__v">2026.03 · 苏州大学校园流浪猫</span></div>
+    <div class="cat-row"><span class="cat-row__k">状态</span><span class="cat-row__v">已绝育</span></div>
   </div>
 
 </div>
 
 <style>
-  .cat-card { display: flex; gap: 1.6em; align-items: flex-start;
-              padding: 1.4em; margin-bottom: 1.6em;
+  .cat-card { display: flex; align-items: center; gap: 1.2em;
+              padding: 1.4em 1.5em; margin: 0 0 1.5em;
               border: 1px solid rgba(0,0,0,.08); border-radius: 12px;
               box-shadow: 0 2px 18px rgba(0,0,0,.05); }
-  .cat-card__photo { flex: 0 0 180px; }
-  .cat-card__photo img { display: block; width: 100%; height: auto;
-                         border-radius: 8px; }
-  .cat-card__info { flex: 1 1 auto; min-width: 0; padding-top: .2em; }
-  .cat-row { display: flex; gap: 1.2em; padding: .42em 0;
-             border-bottom: 1px dashed rgba(0,0,0,.07); }
-  .cat-row:last-child { border-bottom: 0; }
-  .cat-row__k { flex: 0 0 4.2em; color: #8a8a8a; font-size: .9em; }
-  .cat-row__v { flex: 1 1 auto; font-weight: 500; }
+  .cat-card__avatar { flex: 0 0 auto; width: 86px; height: 86px;
+                      display: flex; align-items: center; justify-content: center;
+                      font-size: 42px; line-height: 1;
+                      background: rgba(232, 154, 74, .14);
+                      border-radius: 50%; }
+  .cat-card__name { font-size: 1.35em; font-weight: 600; margin-bottom: .2em; }
+  .cat-card__sub { font-size: .9em; color: #8a8a8a; }
 
   .cat-quote { margin: 0 0 2em; padding-left: .9em;
                border-left: 2px solid rgba(0,0,0,.14);
                color: #666; font-size: .95em; }
 
-  .cat-h { margin: 2.2em 0 1em; padding-bottom: .35em; font-size: 1.05em;
-           border-bottom: 2px solid rgba(0,0,0,.08); }
-
-  .cat-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-  .cat-gallery a { display: block; cursor: zoom-in; }
-  .cat-gallery img { display: block; width: 100%; aspect-ratio: 1 / 1;
-                     object-fit: cover; border-radius: 8px;
-                     transition: opacity .15s ease; }
-  .cat-gallery a:hover img { opacity: .9; }
-
-  .cat-lightbox { margin: auto; padding: 0; border: 0; background: transparent;
-                  max-width: none; max-height: none; overflow: visible; }
-  .cat-lightbox::backdrop { background: rgba(0, 0, 0, .88); }
-  .cat-lightbox img { display: block; width: auto; height: auto;
-                      max-width: 92vw; max-height: 92vh; border-radius: 6px;
-                      box-shadow: 0 24px 70px rgba(0, 0, 0, .55); }
-  .cat-lightbox__close { position: fixed; top: 12px; right: 16px;
-                         width: 44px; height: 44px; padding: 0; border: 0;
-                         border-radius: 50%; background: rgba(255,255,255,.14);
-                         color: #fff; font-size: 26px; line-height: 1;
-                         cursor: pointer; }
-  .cat-lightbox__close:hover { background: rgba(255,255,255,.3); }
+  .cat-facts { margin: 0; }
+  .cat-row { display: flex; gap: 1.2em; padding: .55em 0;
+             border-bottom: 1px dashed rgba(0,0,0,.08); }
+  .cat-row:last-child { border-bottom: 0; }
+  .cat-row__k { flex: 0 0 4.2em; color: #8a8a8a; font-size: .9em; }
+  .cat-row__v { flex: 1 1 auto; font-weight: 500; }
 
   html[data-theme="dark"] .cat-card { border-color: rgba(255,255,255,.14); }
-  html[data-theme="dark"] .cat-row { border-bottom-color: rgba(255,255,255,.12); }
-  html[data-theme="dark"] .cat-row__k { color: #9a9a9a; }
+  html[data-theme="dark"] .cat-card__avatar { background: rgba(232,154,74,.18); }
+  html[data-theme="dark"] .cat-card__sub { color: #9a9a9a; }
   html[data-theme="dark"] .cat-quote { color: #b8b8b8;
                                        border-left-color: rgba(255,255,255,.22); }
+  html[data-theme="dark"] .cat-row { border-bottom-color: rgba(255,255,255,.12); }
+  html[data-theme="dark"] .cat-row__k { color: #9a9a9a; }
 
-  @media (max-width: 640px) {
-    .cat-card { flex-direction: column; gap: 1em; }
-    .cat-card__photo { flex: 0 0 auto; max-width: 200px; }
-    .cat-gallery { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 600px) {
+    .cat-card { flex-direction: column; align-items: flex-start; }
   }
 </style>
-
-<script>
-  (function () {
-    var links = document.querySelectorAll('a.cat-zoom');
-    if (!links.length || typeof HTMLDialogElement === 'undefined') return;
-
-    var dlg = document.createElement('dialog');
-    dlg.className = 'cat-lightbox';
-
-    var btn = document.createElement('button');
-    btn.type = 'button';
-    btn.className = 'cat-lightbox__close';
-    btn.setAttribute('aria-label', '关闭');
-    btn.textContent = '\u00d7';
-
-    var img = document.createElement('img');
-    img.alt = '';
-
-    dlg.appendChild(btn);
-    dlg.appendChild(img);
-    document.body.appendChild(dlg);
-
-    Array.prototype.forEach.call(links, function (a) {
-      a.addEventListener('click', function (e) {
-        e.preventDefault();
-        img.src = a.getAttribute('href');
-        document.documentElement.style.overflow = 'hidden';
-        dlg.showModal();
-      });
-    });
-
-    dlg.addEventListener('click', function (e) {
-      if (e.target === dlg) dlg.close();
-    });
-    btn.addEventListener('click', function () { dlg.close(); });
-    dlg.addEventListener('close', function () {
-      img.removeAttribute('src');
-      document.documentElement.style.overflow = '';
-    });
-  })();
-</script>

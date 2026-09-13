@@ -1,13 +1,13 @@
 # 顶部导航菜单
 main:
-  - title: "作品集"
-    url: /portfolio/
-
-  - title: "简历"
+  - title: "CV"
     url: /cv/
 
-  - title: "朋友圈"
+  - title: "Portfolio"
+    url: /portfolio/
+
+  - title: "Moments"
     url: /moments/
 
-  - title: "小猫"
+  - title: "The Cat"
     url: /cat/
