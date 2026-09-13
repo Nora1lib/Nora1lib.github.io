@@ -19,7 +19,8 @@ classes: wide
   </div>
 
   <!-- ===== 置顶 =====
-       置顶内容放在这一块。不要置顶就把整个 <div class="mm-pin">...</div> 删掉。
+       把要置顶的那条动态整块 <div class="mm-item"> ... </div> 移到下面 pin 容器里即可。
+       不需要置顶就把整个 <div class="mm-pin"> ... </div> 删掉。
   -->
   <div class="mm-pin">
     <div class="mm-pin__badge">置顶</div>
@@ -35,21 +36,31 @@ classes: wide
 
   <h2 class="mm-h">全部动态</h2>
 
-  <!-- ===== 一条动态 =====
-       发新的：把下面整个 <div class="mm-item"> ... </div> 复制到这一行下面，改文字和日期。
-       带图片：在 <div class="mm-item__text"> 后面插入
-       <div class="mm-item__grid mm-item__grid--3">
-         <a class="mm-zoom" href="/images/moments/照片1.webp"><img src="/images/moments/照片1.webp" alt="" loading="lazy"></a>
+  <!-- ===== 动态列表（新的在上面）=====
+       每条动态的结构：
+       <div class="mm-item">
+         <div class="mm-item__avatar"><img src="/images/dony.jpg" alt=""></div>
+         <div class="mm-item__body">
+           <div class="mm-item__name">Nora</div>
+           <div class="mm-item__text">文字内容</div>
+           <div class="mm-item__grid mm-item__grid--3">
+             <a class="mm-zoom" href="/images/moments/图片.webp"><img src="/images/moments/图片.webp" alt="" loading="lazy"></a>
+           </div>
+           <div class="mm-item__meta">2026.06.28 · 地点</div>
+         </div>
        </div>
-       （1 张用 --1，2~4 张用 --2，5~9 张用 --3）
+       图片数量：1 张用 --1，2~4 张用 --2，5~9 张用 --3
   -->
 
   <div class="mm-item">
     <div class="mm-item__avatar"><img src="/images/dony.jpg" alt=""></div>
     <div class="mm-item__body">
       <div class="mm-item__name">Nora</div>
-      <div class="mm-item__text">示例：今天在南大图书馆待到闭馆。做研究最缺的不是方法，是耐心。</div>
-      <div class="mm-item__meta">示例 · 南京大学</div>
+      <div class="mm-item__text">每一帧都是回不去的青春，于是我按下快门</div>
+        <div class="mm-item__grid mm-item__grid--1">
+          <a class="mm-zoom" href="/images/moments/mom-20260628-01.webp"><img src="/images/moments/mom-20260628-01.webp" alt="" loading="lazy"></a>
+        </div>
+      <div class="mm-item__meta">2026.06.28</div>
     </div>
   </div>
 
@@ -57,8 +68,25 @@ classes: wide
     <div class="mm-item__avatar"><img src="/images/dony.jpg" alt=""></div>
     <div class="mm-item__body">
       <div class="mm-item__name">Nora</div>
-      <div class="mm-item__text">示例：作品集终于做完了，18 页，从封面到致谢都是自己一点点搭的。</div>
-      <div class="mm-item__meta">示例</div>
+      <div class="mm-item__text">端午安康</div>
+        <div class="mm-item__grid mm-item__grid--1">
+          <a class="mm-zoom" href="/images/moments/mom-20260619-01.webp"><img src="/images/moments/mom-20260619-01.webp" alt="" loading="lazy"></a>
+        </div>
+      <div class="mm-item__meta">2026.06.19</div>
+    </div>
+  </div>
+
+  <div class="mm-item">
+    <div class="mm-item__avatar"><img src="/images/dony.jpg" alt=""></div>
+    <div class="mm-item__body">
+      <div class="mm-item__name">Nora</div>
+      <div class="mm-item__text">在深圳 见一面好吗</div>
+        <div class="mm-item__grid mm-item__grid--2">
+          <a class="mm-zoom" href="/images/moments/mom-20260101-01.webp"><img src="/images/moments/mom-20260101-01.webp" alt="" loading="lazy"></a>
+          <a class="mm-zoom" href="/images/moments/mom-20260101-02.webp"><img src="/images/moments/mom-20260101-02.webp" alt="" loading="lazy"></a>
+          <a class="mm-zoom" href="/images/moments/mom-20260101-03.webp"><img src="/images/moments/mom-20260101-03.webp" alt="" loading="lazy"></a>
+        </div>
+      <div class="mm-item__meta">2026.01.01</div>
     </div>
   </div>
 
@@ -87,23 +115,23 @@ classes: wide
                    font-size: .72em; letter-spacing: .06em;
                    color: #6969BC; background: rgba(105,105,188,.14); }
 
-  .mm-item { display: flex; gap: .95em; padding: 1.1em 0;
+  .mm-item { display: flex; gap: .95em; padding: 1.15em 0;
              border-bottom: 1px solid rgba(0,0,0,.07); }
   .mm-pin .mm-item { border-bottom: 0; padding-bottom: .9em; }
   .mm-item__avatar { flex: 0 0 auto; }
   .mm-item__avatar img { display: block; width: 46px; height: 46px;
                          object-fit: cover; border-radius: 6px; }
   .mm-item__body { flex: 1 1 auto; min-width: 0; }
-  .mm-item__name { font-weight: 600; font-size: .95em; margin-bottom: .3em; }
-  .mm-item__text { font-size: .95em; line-height: 1.75; margin-bottom: .5em;
+  .mm-item__name { font-weight: 600; font-size: .95em; margin-bottom: .32em; }
+  .mm-item__text { font-size: .95em; line-height: 1.75; margin-bottom: .55em;
                    white-space: pre-line; }
-  .mm-item__grid { display: grid; gap: 4px; margin: 0 0 .5em; }
-  .mm-item__grid--1 { grid-template-columns: 1fr; max-width: 200px; }
-  .mm-item__grid--2 { grid-template-columns: repeat(2, 1fr); max-width: 280px; }
-  .mm-item__grid--3 { grid-template-columns: repeat(3, 1fr); max-width: 340px; }
+  .mm-item__grid { display: grid; gap: 5px; margin: 0 0 .6em; }
+  .mm-item__grid--1 { grid-template-columns: 1fr; max-width: 240px; }
+  .mm-item__grid--2 { grid-template-columns: repeat(2, 1fr); max-width: 320px; }
+  .mm-item__grid--3 { grid-template-columns: repeat(3, 1fr); max-width: 460px; }
   .mm-item__grid a { display: block; cursor: zoom-in; }
   .mm-item__grid img { display: block; width: 100%; aspect-ratio: 1 / 1;
-                       object-fit: cover; border-radius: 4px;
+                       object-fit: cover; border-radius: 5px;
                        transition: opacity .15s ease; }
   .mm-item__grid--1 img { aspect-ratio: auto; }
   .mm-item__grid a:hover img { opacity: .9; }
@@ -134,6 +162,8 @@ classes: wide
 
   @media (max-width: 600px) {
     .mm-head { flex-direction: column; align-items: flex-start; gap: .9em; }
+    .mm-item__grid--3 { max-width: none; }
+    .mm-item__grid--2 { max-width: none; }
   }
 </style>
 
