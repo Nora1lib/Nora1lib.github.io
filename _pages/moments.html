@@ -8,29 +8,12 @@ classes: wide
 
 <div class="mm">
 
-  <!-- ===== 个人卡片（微信号 / 个性签名）===== -->
+  <!-- ===== 个人卡片（头像 / 昵称 / 个性签名）===== -->
   <div class="mm-head">
     <div class="mm-head__avatar"><img src="/images/dony.jpg" alt=""></div>
     <div class="mm-head__info">
       <div class="mm-head__name">Nora</div>
-      <div class="mm-head__id">微信号：dorado1lib</div>
-      <div class="mm-head__sign">个性签名：做生活的嚼嚼者</div>
-    </div>
-  </div>
-
-  <!-- ===== 置顶 =====
-       把要置顶的那条动态整块 <div class="mm-item"> ... </div> 移到下面 pin 容器里即可。
-       不需要置顶就把整个 <div class="mm-pin"> ... </div> 删掉。
-  -->
-  <div class="mm-pin">
-    <div class="mm-pin__badge">置顶</div>
-    <div class="mm-item">
-      <div class="mm-item__avatar"><img src="/images/dony.jpg" alt=""></div>
-      <div class="mm-item__body">
-        <div class="mm-item__name">Nora</div>
-        <div class="mm-item__text">示例：这里会放一条置顶内容。等我把内容发过来替换。</div>
-        <div class="mm-item__meta">示例</div>
-      </div>
+      <div class="mm-head__sign">做生活的嚼嚼者</div>
     </div>
   </div>
 
@@ -101,23 +84,13 @@ classes: wide
   .mm-head__avatar img { display: block; width: 74px; height: 74px;
                          object-fit: cover; border-radius: 10px; }
   .mm-head__name { font-size: 1.12em; font-weight: 600; margin-bottom: .2em; }
-  .mm-head__id { font-size: .82em; color: #9a9a9a; margin-bottom: .5em; }
   .mm-head__sign { font-size: .92em; color: #555; line-height: 1.6; }
 
   .mm-h { margin: 0 0 .6em; padding-bottom: .35em; font-size: 1.05em;
           border-bottom: 2px solid rgba(0,0,0,.08); }
 
-  .mm-pin { margin: 0 0 .8em; padding: .9em 1em .2em;
-            border: 1px solid rgba(105,105,188,.28); border-radius: 10px;
-            background: rgba(105,105,188,.045); }
-  .mm-pin__badge { display: inline-block; margin-bottom: .6em;
-                   padding: .12em .6em; border-radius: 4px;
-                   font-size: .72em; letter-spacing: .06em;
-                   color: #6969BC; background: rgba(105,105,188,.14); }
-
   .mm-item { display: flex; gap: .95em; padding: 1.15em 0;
              border-bottom: 1px solid rgba(0,0,0,.07); }
-  .mm-pin .mm-item { border-bottom: 0; padding-bottom: .9em; }
   .mm-item__avatar { flex: 0 0 auto; }
   .mm-item__avatar img { display: block; width: 46px; height: 46px;
                          object-fit: cover; border-radius: 6px; }
@@ -152,13 +125,9 @@ classes: wide
 
   html[data-theme="dark"] .mm-head { border-color: rgba(255,255,255,.14); }
   html[data-theme="dark"] .mm-head__sign { color: #b8b8b8; }
-  html[data-theme="dark"] .mm-head__id { color: #8a8a8a; }
   html[data-theme="dark"] .mm-item { border-bottom-color: rgba(255,255,255,.12); }
   html[data-theme="dark"] .mm-item__meta { color: #8a8a8a; }
-  html[data-theme="dark"] .mm-pin { border-color: rgba(166,166,227,.32);
                                     background: rgba(166,166,227,.07); }
-  html[data-theme="dark"] .mm-pin__badge { color: #A6A6E3;
-                                           background: rgba(166,166,227,.16); }
 
   @media (max-width: 600px) {
     .mm-head { flex-direction: column; align-items: flex-start; gap: .9em; }
