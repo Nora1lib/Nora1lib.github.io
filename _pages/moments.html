@@ -1,0 +1,131 @@
+---
+layout: single
+title: "朋友圈 Moments"
+permalink: /moments/
+author_profile: true
+classes: wide
+---
+
+<div class="mom-stream">
+
+  <!-- ========= 一条朋友圈 =========
+       要发新的，把下面整个 <div class="mom"> ... </div> 复制一份放到最上面，
+       改文字和日期即可。图片可选，不要就把 <div class="mom__grid"> 整块删掉。
+  -->
+
+  <div class="mom">
+    <div class="mom__avatar"><img src="/images/dony.jpg" alt=""></div>
+    <div class="mom__body">
+      <div class="mom__name">Nora</div>
+      <div class="mom__text">示例：今天在南大图书馆待到闭馆。做研究最缺的不是方法，是耐心。</div>
+      <div class="mom__meta">示例 · 南京大学</div>
+    </div>
+  </div>
+
+  <div class="mom">
+    <div class="mom__avatar"><img src="/images/dony.jpg" alt=""></div>
+    <div class="mom__body">
+      <div class="mom__name">Nora</div>
+      <div class="mom__text">示例：作品集终于做完了，18 页，从封面到致谢都是自己一点点搭的。</div>
+      <div class="mom__meta">示例</div>
+    </div>
+  </div>
+
+  <!-- ========= 带图片的写法（把 src 换成你上传到 images/moments/ 的图片）=========
+  <div class="mom">
+    <div class="mom__avatar"><img src="/images/dony.jpg" alt=""></div>
+    <div class="mom__body">
+      <div class="mom__name">Nora</div>
+      <div class="mom__text">文字内容写在这里。</div>
+      <div class="mom__grid mom__grid--3">
+        <a class="mom__zoom" href="/images/moments/照片1.webp"><img src="/images/moments/照片1.webp" alt="" loading="lazy"></a>
+        <a class="mom__zoom" href="/images/moments/照片2.webp"><img src="/images/moments/照片2.webp" alt="" loading="lazy"></a>
+        <a class="mom__zoom" href="/images/moments/照片3.webp"><img src="/images/moments/照片3.webp" alt="" loading="lazy"></a>
+      </div>
+      <div class="mom__meta">日期 · 地点</div>
+    </div>
+  </div>
+  -->
+
+</div>
+
+<style>
+  .mom-stream { margin: 0; }
+  .mom { display: flex; gap: .9em; padding: 1.15em 0;
+         border-bottom: 1px solid rgba(0, 0, 0, .07); }
+  .mom:last-child { border-bottom: 0; }
+  .mom__avatar { flex: 0 0 auto; }
+  .mom__avatar img { display: block; width: 46px; height: 46px;
+                     object-fit: cover; border-radius: 6px; }
+  .mom__body { flex: 1 1 auto; min-width: 0; }
+  .mom__name { font-weight: 600; font-size: .95em; margin-bottom: .3em; }
+  .mom__text { font-size: .95em; line-height: 1.75; margin-bottom: .55em;
+               white-space: pre-line; }
+  .mom__grid { display: grid; gap: 4px; margin: 0 0 .55em; }
+  .mom__grid--1 { grid-template-columns: 1fr; max-width: 200px; }
+  .mom__grid--2 { grid-template-columns: repeat(2, 1fr); max-width: 280px; }
+  .mom__grid--3 { grid-template-columns: repeat(3, 1fr); max-width: 340px; }
+  .mom__grid a { display: block; cursor: zoom-in; }
+  .mom__grid img { display: block; width: 100%; aspect-ratio: 1 / 1;
+                   object-fit: cover; border-radius: 4px; transition: opacity .15s ease; }
+  .mom__grid--1 img { aspect-ratio: auto; }
+  .mom__grid a:hover img { opacity: .9; }
+  .mom__meta { font-size: .8em; color: #9a9a9a; }
+
+  .mom-lightbox { margin: auto; padding: 0; border: 0; background: transparent;
+                  max-width: none; max-height: none; overflow: visible; }
+  .mom-lightbox::backdrop { background: rgba(0, 0, 0, .88); }
+  .mom-lightbox img { display: block; width: auto; height: auto;
+                      max-width: 92vw; max-height: 92vh; border-radius: 6px;
+                      box-shadow: 0 24px 70px rgba(0, 0, 0, .55); }
+  .mom-lightbox__close { position: fixed; top: 12px; right: 16px;
+                         width: 44px; height: 44px; padding: 0; border: 0;
+                         border-radius: 50%; background: rgba(255,255,255,.14);
+                         color: #fff; font-size: 26px; line-height: 1;
+                         cursor: pointer; }
+  .mom-lightbox__close:hover { background: rgba(255,255,255,.3); }
+
+  html[data-theme="dark"] .mom { border-bottom-color: rgba(255,255,255,.12); }
+  html[data-theme="dark"] .mom__meta { color: #8a8a8a; }
+</style>
+
+<script>
+  (function () {
+    var links = document.querySelectorAll('a.mom__zoom');
+    if (!links.length || typeof HTMLDialogElement === 'undefined') return;
+
+    var dlg = document.createElement('dialog');
+    dlg.className = 'mom-lightbox';
+
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'mom-lightbox__close';
+    btn.setAttribute('aria-label', '关闭');
+    btn.textContent = '\u00d7';
+
+    var img = document.createElement('img');
+    img.alt = '';
+
+    dlg.appendChild(btn);
+    dlg.appendChild(img);
+    document.body.appendChild(dlg);
+
+    Array.prototype.forEach.call(links, function (a) {
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        img.src = a.getAttribute('href');
+        document.documentElement.style.overflow = 'hidden';
+        dlg.showModal();
+      });
+    });
+
+    dlg.addEventListener('click', function (e) {
+      if (e.target === dlg) dlg.close();
+    });
+    btn.addEventListener('click', function () { dlg.close(); });
+    dlg.addEventListener('close', function () {
+      img.removeAttribute('src');
+      document.documentElement.style.overflow = '';
+    });
+  })();
+</script>
