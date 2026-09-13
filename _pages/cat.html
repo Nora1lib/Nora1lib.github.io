@@ -23,11 +23,26 @@ classes: wide
     <div class="cat-row"><span class="cat-row__k">品种</span><span class="cat-row__v">中华田园猫 · 橘猫</span></div>
     <div class="cat-row"><span class="cat-row__k">生日</span><span class="cat-row__v">2025.09</span></div>
     <div class="cat-row"><span class="cat-row__k">性别</span><span class="cat-row__v">小女猫 · 单身主义</span></div>
+    <div class="cat-row"><span class="cat-row__k">体重</span><span class="cat-row__v">4.5 kg</span></div>
     <div class="cat-row"><span class="cat-row__k">性格</span><span class="cat-row__v">胆小 · 粘人</span></div>
     <div class="cat-row"><span class="cat-row__k">户籍</span><span class="cat-row__v">江苏苏州</span></div>
     <div class="cat-row"><span class="cat-row__k">现居</span><span class="cat-row__v">江苏南京</span></div>
     <div class="cat-row"><span class="cat-row__k">领养</span><span class="cat-row__v">2026.03 · 苏州大学校园流浪猫</span></div>
     <div class="cat-row"><span class="cat-row__k">状态</span><span class="cat-row__v">已绝育</span></div>
+  </div>
+
+  <h2 class="cat-h">作息表</h2>
+
+  <div class="sch">
+    <div class="sch-row"><span class="sch-row__t">07:00</span><span class="sch-row__k">叫醒服务</span><span class="sch-row__d">踩脸 + 蹭头，准时到分钟</span></div>
+    <div class="sch-row"><span class="sch-row__t">07:30</span><span class="sch-row__k">早餐</span><span class="sch-row__d"></span></div>
+    <div class="sch-row"><span class="sch-row__t">08:00</span><span class="sch-row__k">回笼觉</span><span class="sch-row__d">沙发底 / 猫窝，视心情而定</span></div>
+    <div class="sch-row"><span class="sch-row__t">12:00</span><span class="sch-row__k">换个地方继续睡</span><span class="sch-row__d"></span></div>
+    <div class="sch-row"><span class="sch-row__t">15:00</span><span class="sch-row__k">窗边岗位</span><span class="sch-row__d">盯鸟、盯树叶、盯楼下的猫</span></div>
+    <div class="sch-row"><span class="sch-row__t">18:00</span><span class="sch-row__k">晚餐</span><span class="sch-row__d"></span></div>
+    <div class="sch-row"><span class="sch-row__t">19:00</span><span class="sch-row__k">跑酷时间</span><span class="sch-row__d">客厅 → 卧室 → 客厅</span></div>
+    <div class="sch-row"><span class="sch-row__t">21:00</span><span class="sch-row__k">粘人模式</span><span class="sch-row__d">跟着铲屎官从房间走到房间</span></div>
+    <div class="sch-row"><span class="sch-row__t">23:00</span><span class="sch-row__k">陪睡</span><span class="sch-row__d">必须睡在枕头边上</span></div>
   </div>
 
   <h2 class="cat-h">相册</h2>
@@ -68,16 +83,38 @@ classes: wide
   .cat-row__k { flex: 0 0 4.2em; color: #8a8a8a; font-size: .9em; }
   .cat-row__v { flex: 1 1 auto; font-weight: 500; }
 
-  .cat-h { margin: 2.2em 0 1em; padding-bottom: .35em; font-size: 1.05em;
+  .cat-h { margin: 2.4em 0 1.1em; padding-bottom: .35em; font-size: 1.05em;
            border-bottom: 2px solid rgba(0,0,0,.08); }
 
-  /* 瀑布流：按图片原始比例排列，不裁剪 */
-  .cat-gallery { column-count: 3; column-gap: 10px; }
-  .cat-gallery a { display: block; margin: 0 0 10px; break-inside: avoid;
+  /* 作息表 */
+  .sch { margin: 0; }
+  .sch-row { display: flex; align-items: baseline; gap: 1em;
+             padding: .6em 0; border-bottom: 1px dashed rgba(0,0,0,.08); }
+  .sch-row:last-child { border-bottom: 0; }
+  .sch-row__t { flex: 0 0 4.1em; color: #6969BC; font-weight: 600;
+                font-size: .88em; letter-spacing: .02em; }
+  .sch-row__k { flex: 0 0 8.2em; font-weight: 500; }
+  .sch-row__d { flex: 1 1 auto; color: #8a8a8a; font-size: .88em; }
+
+  /* 相册：错落式拼贴，间距 18px */
+  .cat-gallery { display: grid; grid-template-columns: repeat(8, 1fr);
+                 gap: 18px; }
+  .cat-gallery a { display: block; overflow: hidden; border-radius: 10px;
                    cursor: zoom-in; }
-  .cat-gallery img { display: block; width: 100%; height: auto;
-                     border-radius: 8px; transition: opacity .15s ease; }
-  .cat-gallery a:hover img { opacity: .88; }
+  .cat-gallery img { display: block; width: 100%; height: 100%;
+                     object-fit: cover;
+                     transition: opacity .18s ease, transform .35s ease; }
+  .cat-gallery a:hover img { opacity: .92; transform: scale(1.03); }
+
+  .cat-gallery a:nth-child(1) { grid-column: span 3; aspect-ratio: 3 / 4; }
+  .cat-gallery a:nth-child(2) { grid-column: span 3; aspect-ratio: 3 / 4; }
+  .cat-gallery a:nth-child(3) { grid-column: span 2; aspect-ratio: 3 / 4; }
+  .cat-gallery a:nth-child(4) { grid-column: span 5; aspect-ratio: 4 / 3; }
+  .cat-gallery a:nth-child(5) { grid-column: span 3; aspect-ratio: 4 / 5; }
+  .cat-gallery a:nth-child(6) { grid-column: span 4; aspect-ratio: 3 / 4; }
+  .cat-gallery a:nth-child(7) { grid-column: span 4; aspect-ratio: 3 / 4; }
+  .cat-gallery a:nth-child(8) { grid-column: span 4; aspect-ratio: 3 / 4; }
+  .cat-gallery a:nth-child(9) { grid-column: span 4; aspect-ratio: 3 / 4; }
 
   .cat-lightbox { margin: auto; padding: 0; border: 0; background: transparent;
                   max-width: none; max-height: none; overflow: visible; }
@@ -96,14 +133,23 @@ classes: wide
   html[data-theme="dark"] .cat-card__sub { color: #9a9a9a; }
   html[data-theme="dark"] .cat-quote { color: #b8b8b8;
                                        border-left-color: rgba(255,255,255,.22); }
-  html[data-theme="dark"] .cat-row { border-bottom-color: rgba(255,255,255,.12); }
-  html[data-theme="dark"] .cat-row__k { color: #9a9a9a; }
+  html[data-theme="dark"] .cat-row,
+  html[data-theme="dark"] .sch-row { border-bottom-color: rgba(255,255,255,.12); }
+  html[data-theme="dark"] .cat-row__k,
+  html[data-theme="dark"] .sch-row__d { color: #9a9a9a; }
+  html[data-theme="dark"] .sch-row__t { color: #A6A6E3; }
 
-  @media (max-width: 900px) { .cat-gallery { column-count: 2; } }
+  @media (max-width: 900px) {
+    .cat-gallery { grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .cat-gallery a:nth-child(n) { grid-column: span 2; aspect-ratio: 3 / 4; }
+    .cat-gallery a:nth-child(4) { aspect-ratio: 4 / 3; }
+  }
   @media (max-width: 600px) {
     .cat-card { flex-direction: column; align-items: flex-start; }
-    .cat-gallery { column-gap: 6px; }
-    .cat-gallery a { margin-bottom: 6px; }
+    .cat-gallery { gap: 12px; }
+    .sch-row { flex-wrap: wrap; gap: .5em 1em; }
+    .sch-row__k { flex: 1 1 auto; }
+    .sch-row__d { flex: 1 1 100%; padding-left: 4.1em; }
   }
 </style>
 
