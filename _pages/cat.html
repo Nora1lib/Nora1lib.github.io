@@ -16,7 +16,9 @@ classes: wide
     </div>
   </div>
 
-  <div class="cat-facts">
+  <section class="cat-panel">
+    <h2 class="cat-panel__title">档案</h2>
+    <div class="cat-rows">
     <div class="cat-row"><span class="cat-row__k">名字</span><span class="cat-row__v">红豆泥</span></div>
     <div class="cat-row"><span class="cat-row__k">英文名</span><span class="cat-row__v">Dony</span></div>
     <div class="cat-row"><span class="cat-row__k">品种</span><span class="cat-row__v">中华田园猫 · 橘猫</span></div>
@@ -28,11 +30,12 @@ classes: wide
     <div class="cat-row"><span class="cat-row__k">现居</span><span class="cat-row__v">江苏南京</span></div>
     <div class="cat-row"><span class="cat-row__k">领养</span><span class="cat-row__v">2026.03</span></div>
     <div class="cat-row"><span class="cat-row__k">状态</span><span class="cat-row__v">已绝育</span></div>
-  </div>
+    </div>
+  </section>
 
-  <h2 class="cat-h">作息表</h2>
-
-  <div class="sch">
+  <section class="cat-panel">
+    <h2 class="cat-panel__title">作息表</h2>
+    <div class="cat-rows">
     <div class="sch-row"><span class="sch-row__t">07:00</span><span class="sch-row__k">叫醒服务</span><span class="sch-row__d">踩脸 + 蹭头，准时到分钟</span></div>
     <div class="sch-row"><span class="sch-row__t">07:30</span><span class="sch-row__k">早餐</span><span class="sch-row__d"></span></div>
     <div class="sch-row"><span class="sch-row__t">08:00</span><span class="sch-row__k">回笼觉</span><span class="sch-row__d">沙发底 / 猫窝，视心情而定</span></div>
@@ -42,7 +45,8 @@ classes: wide
     <div class="sch-row"><span class="sch-row__t">19:00</span><span class="sch-row__k">跑酷时间</span><span class="sch-row__d">客厅 → 卧室 → 客厅</span></div>
     <div class="sch-row"><span class="sch-row__t">21:00</span><span class="sch-row__k">粘人模式</span><span class="sch-row__d">跟着铲屎官从房间走到房间</span></div>
     <div class="sch-row"><span class="sch-row__t">23:00</span><span class="sch-row__k">陪睡</span><span class="sch-row__d">必须睡在枕头边上</span></div>
-  </div>
+    </div>
+  </section>
 
   <h2 class="cat-h">相册</h2>
 
@@ -61,6 +65,7 @@ classes: wide
 </div>
 
 <style>
+  /* 名片 */
   .cat-card { display: flex; align-items: center; gap: 1.3em;
               padding: 1.4em 1.5em; margin: 0 0 1.6em;
               border: 1px solid rgba(0,0,0,.08); border-radius: 12px;
@@ -71,28 +76,35 @@ classes: wide
   .cat-card__name { font-size: 1.45em; font-weight: 600; margin-bottom: .25em; }
   .cat-card__sub { font-size: .92em; color: #8a8a8a; }
 
-  .cat-facts { margin: 0 0 .5em; }
-  .cat-row { display: flex; gap: 1.2em; padding: .55em 0;
-             border-bottom: 1px dashed rgba(0,0,0,.08); }
-  .cat-row:last-child { border-bottom: 0; }
-  .cat-row__k { flex: 0 0 4.6em; color: #8a8a8a; font-size: .9em; }
+  /* 卡片：档案 / 作息表 */
+  .cat-panel { padding: 1.15em 1.4em 1.25em; margin: 0 0 1.6em;
+               border: 1px solid rgba(0,0,0,.08); border-radius: 12px;
+               box-shadow: 0 2px 18px rgba(0,0,0,.05); }
+  .cat-panel__title { margin: 0 0 .5em; padding-bottom: .45em;
+                      font-size: .95em; font-weight: 600;
+                      letter-spacing: .05em; color: #666;
+                      border-bottom: 1px solid rgba(0,0,0,.08); }
+
+  /* 档案行：收紧行高 */
+  .cat-row { display: flex; gap: 1.2em; padding: .28em 0;
+             line-height: 1.5; }
+  .cat-row__k { flex: 0 0 4.6em; color: #8a8a8a;
+                font-size: .88em; line-height: 1.6; }
   .cat-row__v { flex: 1 1 auto; font-weight: 500; }
 
-  .cat-h { margin: 2.4em 0 1.1em; padding-bottom: .35em; font-size: 1.05em;
+  /* 作息表行：收紧行高 */
+  .sch-row { display: flex; align-items: baseline; gap: 1em;
+             padding: .3em 0; line-height: 1.5; }
+  .sch-row__t { flex: 0 0 4.1em; color: #6969BC; font-weight: 600;
+                font-size: .86em; letter-spacing: .02em; }
+  .sch-row__k { flex: 0 0 8.2em; font-weight: 500; }
+  .sch-row__d { flex: 1 1 auto; color: #8a8a8a; font-size: .86em; }
+
+  /* 相册区标题 */
+  .cat-h { margin: 2.2em 0 1.1em; padding-bottom: .35em; font-size: 1.05em;
            border-bottom: 2px solid rgba(0,0,0,.08); }
 
-  /* 作息表 */
-  .sch { margin: 0; }
-  .sch-row { display: flex; align-items: baseline; gap: 1em;
-             padding: .6em 0; border-bottom: 1px dashed rgba(0,0,0,.08); }
-  .sch-row:last-child { border-bottom: 0; }
-  .sch-row__t { flex: 0 0 4.1em; color: #6969BC; font-weight: 600;
-                font-size: .88em; letter-spacing: .02em; }
-  .sch-row__k { flex: 0 0 8.2em; font-weight: 500; }
-  .sch-row__d { flex: 1 1 auto; color: #8a8a8a; font-size: .88em; }
-
-  /* 相册：3 列，最大宽度 560px（单张约 175px，不超过侧边栏头像）
-     同一行内高度完全一致，行与行之间高低错落 */
+  /* 相册：3 列等高，单张 175px（与侧边栏头像同宽） */
   .cat-gallery { display: grid; grid-template-columns: repeat(3, 1fr);
                  gap: 18px; max-width: 560px; }
   .cat-gallery a { display: block; overflow: hidden; border-radius: 10px;
@@ -119,10 +131,11 @@ classes: wide
                          cursor: pointer; }
   .cat-lightbox__close:hover { background: rgba(255,255,255,.3); }
 
-  html[data-theme="dark"] .cat-card { border-color: rgba(255,255,255,.14); }
+  html[data-theme="dark"] .cat-card,
+  html[data-theme="dark"] .cat-panel { border-color: rgba(255,255,255,.14); }
   html[data-theme="dark"] .cat-card__sub { color: #9a9a9a; }
-  html[data-theme="dark"] .cat-row,
-  html[data-theme="dark"] .sch-row { border-bottom-color: rgba(255,255,255,.12); }
+  html[data-theme="dark"] .cat-panel__title { color: #b0b0b0;
+                                              border-bottom-color: rgba(255,255,255,.12); }
   html[data-theme="dark"] .cat-row__k,
   html[data-theme="dark"] .sch-row__d { color: #9a9a9a; }
   html[data-theme="dark"] .sch-row__t { color: #A6A6E3; }
@@ -132,7 +145,7 @@ classes: wide
     .cat-gallery { grid-template-columns: repeat(2, 1fr); gap: 12px;
                    max-width: none; }
     .cat-gallery a:nth-child(n) { aspect-ratio: 3 / 4; }
-    .sch-row { flex-wrap: wrap; gap: .5em 1em; }
+    .sch-row { flex-wrap: wrap; gap: .4em 1em; }
     .sch-row__k { flex: 1 1 auto; }
     .sch-row__d { flex: 1 1 100%; padding-left: 4.1em; }
   }
