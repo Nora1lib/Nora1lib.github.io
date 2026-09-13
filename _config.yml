@@ -23,7 +23,7 @@ repository               : "Nora1lib/Nora1lib.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "dony.jpg"
+  avatar           : "avatar.jpg"
   name             : "Nora"
   pronouns         : # example: "she/her"  
   bio              : "2004年生人，未婚未育养有一猫。成功在于后天的努力，所以今天和明天休息。"
